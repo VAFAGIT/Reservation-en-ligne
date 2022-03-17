@@ -1,57 +1,44 @@
-<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<!------ Include the above in your HEAD tag ---------->
+<?php
+  if(isset($_POST['submit'])){
+    $CreatUser = new UsersController();
+    $CreatUser->register();
+  }
 
-<!--author:starttemplate-->
-<!--reference site : starttemplate.com-->
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="keywords"
-          content="unique login form,leamug login form,boostrap login form,responsive login form,free css html login form,download login form">
-    <meta name="author" content="leamug">
-    <title>Unique Login Form | Bootstrap Templates</title>
-    <link href="css/style.css" rel="stylesheet" id="style">
-    <!-- Bootstrap core Library -->
-    <link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-    <script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-    <!-- Google font -->
-    <link href="https://fonts.googleapis.com/css?family=Dancing+Script" rel="stylesheet">
-    <!-- Font Awesome-->
-    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
-</head>
-<body>
+?>
 
-<!-- Page Content -->
-<div class="container">
-    <div class="row">
-        <div class="col-md-offset-5 col-md-4 text-center">
-            <h1 class='text-white'>Unique Login Form</h1>
-              <div class="form-login"></br>
-                <h4>Secure Login</h4>
-                </br>
-                <input type="text" id="userName" class="form-control input-sm chat-input" placeholder="username"/>
-                </br></br>
-                <input type="text" id="userPassword" class="form-control input-sm chat-input" placeholder="password"/>
-                </br></br>
-                <div class="wrapper">
-                        <span class="group-btn">
-                            <a href="#" class="btn btn-danger btn-md">login <i class="fa fa-sign-in"></i></a>
-                        </span>
+<div class="container-fluid bg-image py-4" style="background-image: url('https://wallpaperaccess.com/full/1470792.jpg');
+            height: 100vh">    <div class="row my-4">
+    <div class="row my-4">
+      <div class="col-md-6 mx-auto">
+           <?php include('./views/includes/alerts.php') ?>
+               <div class="card">
+                   <div class="card-header">
+                       <h3 class="text-center">inscription</h3>
+                   </div>
+                    <div class="card-body bg-dark">
+      
+                    <form method="POST" class="mr-1 " action="">
+                        <div class="form-group mb-3">
+                             <input type="text" name="fullname" placeholder="Full Name" class="form-control">
+                        </div>
+                        <div class="form-group mb-3">
+                             <input type="text" name="username" placeholder="Usename" class="form-control">
+                        </div>
+                        <div class="form-group mb-2">
+                             <input type="password" name="password" placeholder="password" class="form-control">
+                        </div>
+                        <button name="submit" class="btn btn-sm btn-primary mb-2">sign up</button>
+                        <div class="card-footer">
+                            <a href="<?php echo BASE_URL;?>login" class="btn btn-link">sign in</a>
+                        </div>
+                    </form>
+                       <div class="card-footer">
+                          <a href="<?php echo BASE_URL;?>login" class="btn btn-link">Connexion</a>
+                       </div>
+                    </div>
                 </div>
-            </div>
+    
+           </div>
         </div>
     </div>
-    </br></br></br>
-    <!--footer-->
-    <div class="footer text-white text-center">
-        <p>© 2020 Unique Login Form. All rights reserved | Design by <a href="https://freecss.tech">Free Css</a></p>
-    </div>
-    <!--//footer-->
 </div>
-</body>
-</html>

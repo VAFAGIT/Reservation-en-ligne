@@ -7,7 +7,7 @@ class HomeController{
         
 		include('views/'.$page.'.php');
 	}
-
+    
 }
 
 ?>

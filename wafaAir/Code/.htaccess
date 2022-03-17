@@ -4,4 +4,5 @@ RewriteEngine On
 
 RewriteBase /wafaAir/Code/
 
+
 RewriteRule ^([-a-zA-Z0-9]+)$ index.php?page=$1

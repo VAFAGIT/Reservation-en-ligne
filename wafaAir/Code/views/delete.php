@@ -1,7 +1,7 @@
 <?php
-  if(isset($_POST['ID'])){
-    $exitFlights = new FlightsController();
-    $exitflights->deleteFlights();
+  if(isset($_POST['id'])){
+    $exitFlight = new FlightsController();
+    $exitFlight->deleteFlights();
   }
   
 ?>
