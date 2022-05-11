@@ -1,5 +1,5 @@
 <?php
-  if(isset($_post['submit'])){
+  if(isset($_POST['submit'])){
     $newFlight = new FlightsController();
     $newFlight -> addFlights();
   }
@@ -30,7 +30,7 @@
                         </div> 
                         <div class="form-group">
                             <label for="date">Date & time*</label>
-                            <input type="datetime-local" name="date" class="form-control" >
+                            <input type="datetime-local" name="date_tim" class="form-control" >
                         </div>
                         <div class="form-group">
                             <label for="arrive">Arrive time*</label>
@@ -47,12 +47,12 @@
                         <div class="form-group">
                             <label for="status">status*</label>
                             <select name="status" id="status" class="form-control">
-                                <option value="1">Active</option>
-                                 <option value="0">Terminate</option>
+                                <option value="1">One way</option>
+                                 <option value="0">Round trip</option>
                             </select>
                         </div>
                         <div class="form-group">
-                            <button class="btb btn-primary mt-2" name="submit">Valider</button>
+                            <button class="btb btn-primary mt-2" type="submit" name="submit">Valider</button>
                         </div>
                     </form>
                 </div>

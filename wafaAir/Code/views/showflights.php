@@ -21,7 +21,7 @@ if (isset($_POST['cancel'])) {
 <!-- Flights going to -->
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="">
-    <img src="https://banner2.cleanpng.com/20180505/lbq/kisspng-flight-aeronautics-aviation-airplane-qatar-airways-airline-5aede2e041fde5.5689378015255395522703.jpg" alt="" width="50" height="60" class="d-inline-block align-text-top">
+    <img src="https://logosvector.net/wp-content/uploads/2013/04/nike-air-flight-vector-logo.png" alt="" width="50" height="60" class="d-inline-block align-text-top">
     <!-- <a class="navbar-brand" href="#">Navbar</a> -->
   </div>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -32,9 +32,9 @@ if (isset($_POST['cancel'])) {
       <li class="nav-item active">
         <a class="nav-link" href="<?php echo BASE_URL ?>">Home <span class="sr-only"></span></a>
       </li>
-      <li class="nav-item">
+      <!-- <li class="nav-item">
         <a class="nav-link" href="#">My reservation</a>
-      </li>
+      </li> -->
 
     </ul>
   </div>
@@ -65,15 +65,9 @@ if (isset($_POST['cancel'])) {
             <td><?= $f["date_time"] ?></td>
             <td><?= $f["arrive_time"] ?></td>
             <td><?= $f["price"] ?></td>
-
             <td>
               <div class="d-flex flex-row justify-content-between">
-                <!-- ADD RESERVATION POP UP  -->
-                <!-- Button trigger modal -->
 
-                <!-- <button type="button" class="btn btn-success reserve" data-bs-toggle="" data-bs-target="" name="reserve" value="<?= $f["id"] ?>">CANCEL</button> -->
-                <!-- Modal -->
-                <!-- add a button for cancelling reservation -->
                 <form class="" action="" method="POST">
                   <input type="text" name="id" hidden value="<?= $f["id"] ?>">
 

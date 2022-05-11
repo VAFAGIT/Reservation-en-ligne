@@ -1,26 +1,24 @@
 <?php
-    if(isset($_POST['find'])){
-        $data = new FlightsController(); //creat object from the class FlightsController
-        $flight = $data->findFlights();
-    }else{
-        $data = new FlightsController(); //creat object from the class FlightsController
-        $flight = $data->getAllFlights();
-    }
+if (isset($_POST['find'])) {
+    $data = new FlightsController(); //creat object from the class FlightsController
+    $flight = $data->findFlights();
+} else {
+    $data = new FlightsController(); //creat object from the class FlightsController
+    $flight = $data->getAllFlights();
+}
 
-   if(isset($_POST['book_add'])){
-       $data = new FlightsController();
-       $data->addBook();
-   }
-    
-    
+if (isset($_POST['book_add'])) {
+    $data = new FlightsController();
+    $data->addBook();
+}
 
-    
+
 ?>
 <div class="container-fluid bg-white">
     <div class="container">
         <nav class="navbar navbar-expand-lg navbar-light bg-white">
             <div class="">
-                <img src="https://www.pinclipart.com/picdir/middle/72-725691_free-airplane-clipart-gold-airplane-vector-png-download.png" alt="" width="50" height="60" class="d-inline-block align-text-top">
+                <img src="https://logosvector.net/wp-content/uploads/2013/04/nike-air-flight-vector-logo.png" alt="" width="50" height="60" class="d-inline-block align-text-top">
                 <!-- <a class="navbar-brand" href="#">Navbar</a> -->
             </div>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -33,13 +31,8 @@
                         <a class="nav-link" href="<?php echo BASE_URL ?>">Home <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="<?php echo BASE_URL ?>add">ADD Flight</a>
-                    </li>
-                    <li class="nav-item">
                         <a class="nav-link" href="<?php echo BASE_URL ?>showflights">Reservation</a>
                     </li>
-
-
                 </ul>
                 <div class="ml-auto">
                     <input type="text" name="search" placeholder="Search">
@@ -51,58 +44,57 @@
                     <!--url de base plus la page add -->
                     <i class="fas fa-user "><span class="p-2"><?php echo $_SESSION['username']; ?></span></i>
                 </a>
-
             </div>
         </nav>
     </div>
 </div>
 
-<div class="container-fluid bg-image py-4" style="background-image: url('https://mdbootstrap.com/img/new/fluid/city/018.jpg');
+<div class="container-fluid bg-image py-4" style="background-image: url('https://cdn.pixabay.com/photo/2020/05/23/04/11/transport-5207942_960_720.jpg');background-repeat:no-repeat;height:100%;
             height: 100vh">
 
     <div class="row my-4">
         <div class="col-md-10 mx-auto">
-            <?php include('./views/includes/alerts.php');?>
+            <?php include('./views/includes/alerts.php'); ?>
             <div class="card">
                 <div class="card-body bg-light">
-                
-                    
+
+
                     <table class="table table-hover">
-                   
+
                         <thead>
                             <tr>
-                            <th scope="col">From / To</th>
-                            <th scope="col">Date & time</th>
-                            <th scope="col">Arrive time</th>
-                            <th scope="col">Price</th>
-                            <th scope="col">Seats number</th>
-                            <th scope="col">Status</th>
-                            <th scope="col">Actions</th>
+                                <th scope="col">From / To</th>
+                                <th scope="col">Date & time</th>
+                                <th scope="col">Arrive time</th>
+                                <th scope="col">Price</th>
+                                <th scope="col">Seats number</th>
+                                <th scope="col">Status</th>
+                                <th scope="col">Actions</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <?php foreach ($flight as $flight):?>
+                            <?php foreach ($flight as $flight) : ?>
                                 <tr>
-                                <th scope="row"><?php echo $flight['fro_m'].' '.$flight['city_to'] ?></th>
-                                <td><?php echo $flight['date_time']?></td>
-                                <td><?php echo $flight['arrive_time']?></td>
-                                <td><?php echo $flight['price']?></td>
-                                <td><?php echo $flight['seats_number']?></td>
-                                <td>
-                                    <?php echo $flight['status']
-                                        ?'<span class="badge bg-success">One way</span>'
-                                        :
-                                        '<span class="badge bg-danger">Round trip</span>';
-                                ;?></td>
-                                <td class="d-flex flex-row">
+                                    <th scope="row"><?php echo $flight['fro_m'] . ' ' . $flight['city_to'] ?></th>
+                                    <td><?php echo $flight['date_time'] ?></td>
+                                    <td><?php echo $flight['arrive_time'] ?></td>
+                                    <td><?php echo $flight['price'] ?></td>
+                                    <td><?php echo $flight['seats_number'] ?></td>
                                     
-                                    <form method="POST"  action="" class="mr-3">
-                                        <input type="hidden" name="id" value="<?php echo $flight['id']?>">
-                                        <button class="btn btn-sm btn-warning " type="submit" name="book_add" >Book</button>
-                                    </form>
-                                </td>
+                                    <td>
+                                        <?php echo $flight['status']
+                                            ? '<span class="badge bg-success">One way</span>'
+                                            :
+                                            '<span class="badge bg-danger">Round trip</span>';; ?></td>
+                                    <td class="d-flex flex-row">
+
+                                        <form method="POST" action="" class="mr-3">
+                                            <input type="hidden" name="id" value="<?php echo $flight['id'] ?>">
+                                            <button class="btn btn-sm btn-warning " type="submit" name="book_add">Book</button>
+                                        </form>
+                                    </td>
                                 </tr>
-                            <?php endforeach;?>
+                            <?php endforeach; ?>
                         </tbody>
                     </table>
                 </div>

@@ -35,7 +35,7 @@
                         </div> 
                         <div class="form-group">
                             <label for="date">Date & time*</label>
-                            <input type="datetime-local" name="date" class="form-control" value="<?php echo $flight->date_time; ?>">
+                            <input type="datetime-local" name="date_tim" class="form-control" value="<?php echo $flight->date_time; ?>">
                         </div>
                         <div class="form-group">
                             <label for="arrive">Arrive time*</label>
@@ -53,8 +53,8 @@
                         <div class="form-group">
                             <label for="status">status*</label>
                             <select name="status" id="status" class="form-control">
-                                <option value="1" <?php echo $flight->status ? 'selected' : ''; ?>>Active</option>
-                                <option value="0" <?php echo !$flight->status ? 'selected' : ''; ?>>Terminate</option>
+                                <option value="1" <?php echo $flight->status ? 'selected' : ''; ?>>One way</option>
+                                <option value="0" <?php echo !$flight->status ? 'selected' : ''; ?>>Round trip</option>
                             </select>
                         </div>
                         <div class="form-group mt-2" >
