@@ -10,7 +10,7 @@
 
 
 
-<div class="container-fluid bg-image py-4" style="background-image: url('https://cdn.pixabay.com/photo/2019/01/24/20/07/map-3953229_960_720.jpg');
+<div class="container-fluid bg-image py-4" style="background-image: url('https://wallpaperaccess.com/full/1470792.jpg');
             height: 100vh">    <div class="row my-4">
         <div class="col-md-6 mx-auto">
             <?php include('./views/includes/alerts.php');?> 

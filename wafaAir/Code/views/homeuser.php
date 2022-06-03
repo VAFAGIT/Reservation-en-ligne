@@ -18,7 +18,7 @@ if (isset($_POST['book_add'])) {
     <div class="container">
         <nav class="navbar navbar-expand-lg navbar-light bg-white">
             <div class="">
-                <img src="https://logosvector.net/wp-content/uploads/2013/04/nike-air-flight-vector-logo.png" alt="" width="50" height="60" class="d-inline-block align-text-top">
+                <img src="../Code/public/img/logo.png" alt="" width="70" height="60" class="d-inline-block align-text-top">
                 <!-- <a class="navbar-brand" href="#">Navbar</a> -->
             </div>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -33,6 +33,7 @@ if (isset($_POST['book_add'])) {
                     <li class="nav-item">
                         <a class="nav-link" href="<?php echo BASE_URL ?>showflights">Reservation</a>
                     </li>
+                    
                 </ul>
                 <div class="ml-auto">
                     <input type="text" name="search" placeholder="Search">
@@ -49,7 +50,7 @@ if (isset($_POST['book_add'])) {
     </div>
 </div>
 
-<div class="container-fluid bg-image py-4" style="background-image: url('https://cdn.pixabay.com/photo/2020/05/23/04/11/transport-5207942_960_720.jpg');background-repeat:no-repeat;height:100%;
+<div class="container-fluid bg-image py-4" style="background-image: url('https://mdbootstrap.com/img/new/fluid/city/018.jpg');
             height: 100vh">
 
     <div class="row my-4">

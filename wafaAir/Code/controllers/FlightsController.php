@@ -95,6 +95,14 @@ class FlightsController
     //     }
     // }
 
+    public function getpassengers()
+    {
+        if (isset($_POST['id'])) {
+            $data = array('id' => $_POST['id']); // $_POST['id'] is the id of the vol
+            $passengers = Flights::getpassengers($data); // $ gains access to method getpassengers and vol class
+            return $passengers;
+        }
+    }
     public function addFlights()
     {  //add function
         // echo $_POST['date_tim'];
@@ -147,6 +155,7 @@ class FlightsController
             'id' => $_POST['id']
         );
         Book::add($data);
+        Flights::decrease($data['id']);
         Session::set('success', 'successfully booked');
     }
     public function deleteBook()
@@ -170,5 +179,29 @@ class FlightsController
     {
         $data = Book::getAllflights();
         return $data;
+    }
+
+    public function addPassenger()
+    {
+        if (isset($_POST['addpass'])) { // if the button is clicked
+            // echo '<pre>';
+            // print_r($_POST);
+            // die;
+
+            $data = array(  // data to be inserted
+                'id_users' => $_SESSION['id'], 
+                'id_flight' => $_POST['id_flight'], 
+                'fullname' => $_POST['fullname'], 
+                'birthday' => $_POST['birthday'],
+            );
+       
+            $result = Flights::addpass($data);
+            if ($result === 'ok') {
+                Session::set('success', 'Passenger added');
+                Redirect::to('showflights');
+            } else {
+                echo $result;
+            }
+        }
     }
 }

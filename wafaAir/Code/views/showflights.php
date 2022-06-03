@@ -1,7 +1,5 @@
 <?php
 if (isset($_SESSION['role']) && $_SESSION['role'] != 'admin') {
-
-
   $data = new FlightsController(); //creat object from the class FlightsController
   $flight = $data->getBook();
   // $title = 'My reservations';
@@ -21,7 +19,7 @@ if (isset($_POST['cancel'])) {
 <!-- Flights going to -->
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="">
-    <img src="https://logosvector.net/wp-content/uploads/2013/04/nike-air-flight-vector-logo.png" alt="" width="50" height="60" class="d-inline-block align-text-top">
+    <img src="../Code/public/img/logo.png" alt="" width="70" height="60" class="d-inline-block align-text-top">
     <!-- <a class="navbar-brand" href="#">Navbar</a> -->
   </div>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -57,6 +55,7 @@ if (isset($_POST['cancel'])) {
         </tr>
       </thead>
       <tbody>
+       
         <?php foreach ($flight as $f) { ?>
           <tr id="<?php echo $f["id"]; ?>">
             <!-- <th scope="row"><input style="color:white;" type="checkbox" id="" name="" value=""></th> -->
@@ -72,7 +71,15 @@ if (isset($_POST['cancel'])) {
                   <input type="text" name="id" hidden value="<?= $f["id"] ?>">
 
                   <button class="btn btn-warning" type="submit" name="cancel">CENCEL</button>
+
+
                 </form>
+                <form method="post" class="mr-2" action="addpassenger">
+                  <input type="text" hidden name="id_flight" value="<?php echo $vol['id']; ?>">
+                  <button class="btn btn btn-success addPassenger" value="<?= $f["id"] ?>" ><i class="fa fa-users"></i> <i class="fa fa-plus"></i> </button>
+                </form>
+               
+
               </div>
             </td>
           </tr>
@@ -83,3 +90,22 @@ if (isset($_POST['cancel'])) {
     <!-- </form> -->
   </div>
 </div>
+<script> 
+
+  let buttons=document.querySelectorAll('.addPassenger');
+//   button.addEventListener("click", function() {
+//        alert(button.value)
+//     // localStorage.setItem('id_flight', button.value);
+  
+// });
+buttons.forEach(function(button){
+  console.log(button.value);
+  button.addEventListener("click", function() {
+      //  alert(button.value)
+    localStorage.setItem('id_flight', button.value);
+  
+});
+});
+
+
+</script>

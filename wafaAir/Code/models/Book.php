@@ -42,4 +42,18 @@ class Book{
         $stmt->execute();
         return $stmt->fetchAll();
     }
+    // static public function addpass($data)
+    // { 
+    //     $stmt = DB::connect()->prepare('INSERT INTO passenger (id_users, reservation_id, fullname,birthday) VALUES (:id_users,:reservation_id,:fullname,:birthday)');
+    //     $stmt->bindParam(':users_id', $data['users_id']);
+    //     $stmt->bindParam(':reservation_id', $data['reservation_id']);
+    //     $stmt->bindParam(':fullname', $data['fullname']);
+    //     $stmt->bindParam(':birthday', $data['birthday']);
+       
+       
+    //     if($stmt->execute()){
+    //         return 'ok';
+    //     }
+        
+    // }
 }

@@ -120,6 +120,13 @@ class Flights{
         $stmt = null;
  
     } 
+    static public function getpassengers($data)
+    {
+        $stmt = DB::connect()->prepare('SELECT * FROM passenger WHERE id_flight=:id_flight'); // inner join : to get all the data from the two tables
+        $stmt->bindParam(':id_flight', $data['id_flight']);  // bindParam : binds the value of the parameter to the variable
+        $stmt->execute();
+        return $stmt->fetchAll();
+    }
     // static public function delete($data){
     //     $ID = $data['ID'];
     //     try{
@@ -147,5 +154,25 @@ class Flights{
                 echo 'erreur' . $ex->getMessage();
             }
         }
+        static public function decrease($id)
+    {
+        $stmt = DB::connect()->prepare('UPDATE flights SET seats_number = seats_number - 1 WHERE id=:id');
+        $stmt->bindParam(':id', $id);
+        if ($stmt->execute()) {
+            return 'ok';
+        }
+    }
+        static public function addpass($data)
+    {
+        $stmt = DB::connect()->prepare('INSERT INTO passenger (id_users,id_flight,fullname,birthday) VALUES (:id_users,:id_flight,:fullname,:birthday)');
+        $stmt->bindParam(':id_users', $_SESSION['id_users']);
+        $stmt->bindParam(':id_flight', $data['id_flight']);
+        $stmt->bindParam(':fullname', $data['fullname']);
+        $stmt->bindParam(':birthday', $data['birthday']);
+        // var_dump($data['id']);
+        if ($stmt->execute()) {
+            return 'ok';
+        }
+    }
 }
 ?>

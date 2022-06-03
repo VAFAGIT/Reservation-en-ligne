@@ -69,6 +69,15 @@ class UsersController
   //  }
 
   // }
+  // public function findPessenger()
+  // {
+  //     if (isset($_POST['search'])) {
+  //         $data = array('search' => $_POST['search']); // $_POST['search'] is the value of the search input
+  //     }
+  //     $pessengers = Users::searchPessenger($data);
+  //     return $pessengers;
+  // }
+  
 
   public static function logout()
   {

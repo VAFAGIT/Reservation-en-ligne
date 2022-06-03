@@ -10,7 +10,7 @@ require_once './controllers/HomeController.php';
 
 $home = new HomeController();
 
-$pages = ['home', 'add', 'update', 'delete', 'showflights', 'login', 'logout', 'homeuser'];
+$pages = ['home', 'add', 'update', 'delete', 'showflights', 'login', 'logout', 'homeuser', 'addpassenger','viewpassenger'];
 if (isset($_SESSION['logged']) && $_SESSION['logged'] === true) {
     if (isset($_GET['page'])) {
         if (in_array($_GET['page'], $pages)) {

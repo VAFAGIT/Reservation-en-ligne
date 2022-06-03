@@ -18,7 +18,7 @@ if (isset($_SESSION['role']) && $_SESSION['role'] != 'admin') {
     <div class="container">
         <nav class="navbar navbar-expand-lg navbar-light bg-white">
             <div class="">
-                <img src="https://logosvector.net/wp-content/uploads/2013/04/nike-air-flight-vector-logo.png" alt="" width="50" height="60" class="d-inline-block align-text-top">
+                <img src="../Code/public/img/logo.png" alt="" width="70" height="60" class="d-inline-block align-text-top">
                 <!-- <a class="navbar-brand" href="#">Navbar</a> -->
             </div>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -54,7 +54,7 @@ if (isset($_SESSION['role']) && $_SESSION['role'] != 'admin') {
         </nav>
     </div>
 </div>
-<div class="container-fluid bg-image py-4" style="background-image: url('https://cdn.pixabay.com/photo/2016/03/27/07/32/clouds-1282314_960_720.jpg');
+<div class="container-fluid bg-image py-4" style="background-image: url('https://mdbootstrap.com/img/new/fluid/city/018.jpg');
             height: 100vh">
     <div class="row my-4">
         <div class="col-md-10 mx-auto">
