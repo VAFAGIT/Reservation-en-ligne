@@ -1,5 +1,5 @@
 # Reservation-en-ligne
-  flight booking management app, built using PHP, JavaScript and MySQL.
+  flight booking management app, built using PHP, JavaScript, Tailwind and MySQL.
 
 
 # Requirements
